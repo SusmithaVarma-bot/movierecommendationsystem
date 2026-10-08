@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - AI Movie Recommendations</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">CineVerse</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#genres" class="nav-link">Genres</a></li>
+                <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Your Next<br><span class="gradient-text">Favorite Movie</span></h1>
+            <p class="hero-subtitle">AI-powered recommendations tailored to your taste</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for movies, genres, or keywords...">
+                    <button id="searchBtn" class="search-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" class="search-results hidden"></div>
+        </div>
+    </section>
+
+    <!-- Genre Section -->
+    <section id="genres" class="genres-section">
+        <div class="container">
+            <h2 class="section-title">Browse by Genre</h2>
+            <p class="section-subtitle">Select a genre to discover top-rated movies</p>
+            
+            <div class="genre-buttons">
+                <button class="genre-btn" data-genre="Comedy">
+                    <span class="genre-icon">😂</span>
+                    <span>Comedy</span>
+                </button>
+                <button class="genre-btn" data-genre="Thriller">
+                    <span class="genre-icon">😱</span>
+                    <span>Thriller</span>
+                </button>
+                <button class="genre-btn" data-genre="Horror">
+                    <span class="genre-icon">👻</span>
+                    <span>Horror</span>
+                </button>
+                <button class="genre-btn" data-genre="Romance">
+                    <span class="genre-icon">💕</span>
+                    <span>Romance</span>
+                </button>
+                <button class="genre-btn" data-genre="Action">
+                    <span class="genre-icon">💥</span>
+                    <span>Action</span>
+                </button>
+                <button class="genre-btn" data-genre="Sci-Fi">
+                    <span class="genre-icon">🚀</span>
+                    <span>Sci-Fi</span>
+                </button>
+            </div>
+
+            <!-- Genre Recommendations -->
+            <div id="genreRecommendations" class="movie-grid hidden"></div>
+        </div>
+    </section>
+
+    <!-- Personalized Recommendations -->
+    <section id="recommendations" class="recommendations-section">
+        <div class="container">
+            <h2 class="section-title">Recommended For You</h2>
+            <p class="section-subtitle">Curated picks based on top-rated films across all genres</p>
+            
+            <div id="personalizedRecommendations" class="movie-grid"></div>
+        </div>
+    </section>
+
+    <!-- All Movies Grid -->
+    <section class="all-movies-section">
+        <div class="container">
+            <h2 class="section-title">Explore All Movies</h2>
+            <p class="section-subtitle">Browse our complete collection</p>
+            
+            <div id="allMovies" class="movie-grid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About CineVerse</h2>
+                <p class="about-text">
+                    CineVerse is an AI-powered movie recommendation system that uses advanced content-based filtering 
+                    to suggest movies you'll love. Our algorithm analyzes movie descriptions, genres, directors, 
+                    cast, and keywords to find perfect matches for your taste.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI-Powered</h3>
+                        <p>Smart recommendations using machine learning</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Personalized</h3>
+                        <p>Tailored suggestions based on your preferences</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant</h3>
+                        <p>Real-time recommendations at your fingertips</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎬</span>
+                    <span class="logo-text">CineVerse</span>
+                </div>
+                <p class="footer-text">© 2024 CineVerse. Your AI Movie Companion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Movie Modal -->
+    <div id="movieModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modalPoster" src="" alt="Movie Poster">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <div class="modal-meta">
+                        <span id="modalGenre" class="modal-genre"></span>
+                        <span id="modalYear" class="modal-year"></span>
+                        <span id="modalRating" class="modal-rating"></span>
+                    </div>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div class="modal-details">
+                        <p><strong>Director:</strong> <span id="modalDirector"></span></p>
+                        <p><strong>Cast:</strong> <span id="modalCast"></span></p>
+                    </div>
+                    <div class="why-recommended">
+                        <h3>Why this movie?</h3>
+                        <p id="modalWhy"></p>
+                    </div>
+                    <button id="getRecommendationsBtn" class="recommend-btn">Get Similar Movies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
